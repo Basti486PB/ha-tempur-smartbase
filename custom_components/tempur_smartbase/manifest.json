@@ -1,0 +1,12 @@
+{
+  "domain": "tempur_smartbase",
+  "name": "Tempur Smartbase (Sleeptracker)",
+  "codeowners": ["@Basti486PB"],
+  "config_flow": true,
+  "documentation": "https://github.com/Basti486PB/ha-tempur-smartbase",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/Basti486PB/ha-tempur-smartbase/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}
