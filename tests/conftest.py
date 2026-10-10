@@ -52,8 +52,8 @@ HELLO = {
 }
 
 SENSOR_MAP = [
-    {"unitNumber": 0, "self": True, "userFirstName": "Basti"},
-    {"unitNumber": 1, "self": False, "userFirstName": "Partner"},
+    {"unitNumber": 0, "self": True, "userFirstName": "Alex"},
+    {"unitNumber": 1, "self": False, "userFirstName": "Sam"},
 ]
 
 SNAPSHOTS = [
