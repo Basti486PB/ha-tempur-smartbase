@@ -1,0 +1,152 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sleeptracker account",
+        "description": "Sign in with the account you use in the Tempur Sleeptracker AI app.",
+        "data": {
+          "email": "Email",
+          "password": "Password",
+          "brand": "App / brand"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Sign in again",
+        "description": "The Sleeptracker cloud rejected the password for {email}.",
+        "data": {
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Email or password is wrong.",
+      "cannot_connect": "The Sleeptracker cloud could not be reached.",
+      "unknown": "Unexpected error, see the log."
+    },
+    "abort": {
+      "already_configured": "This account is already set up.",
+      "reauth_successful": "Signed in again."
+    }
+  },
+  "selector": {
+    "brand": {
+      "options": {
+        "tempur": "Tempur (Sleeptracker AI)",
+        "beautyrest": "Beautyrest",
+        "serta": "Serta"
+      }
+    }
+  },
+  "entity": {
+    "button": {
+      "preset_flat": {
+        "name": "Preset flat"
+      },
+      "preset_zero_g": {
+        "name": "Preset zero G"
+      },
+      "preset_tv": {
+        "name": "Preset TV"
+      },
+      "preset_user_favorite": {
+        "name": "Preset favorite"
+      },
+      "preset_anti_snore": {
+        "name": "Preset anti snore"
+      },
+      "program_zero_g": {
+        "name": "Save current position as zero G"
+      },
+      "program_tv": {
+        "name": "Save current position as TV"
+      },
+      "program_user_favorite": {
+        "name": "Save current position as favorite"
+      },
+      "program_anti_snore": {
+        "name": "Save current position as anti snore"
+      },
+      "massage_head_step": {
+        "name": "Head massage step"
+      },
+      "massage_foot_step": {
+        "name": "Foot massage step"
+      },
+      "massage_step": {
+        "name": "Massage step"
+      },
+      "massage_pattern_step": {
+        "name": "Massage pattern step"
+      },
+      "massage_timer_step": {
+        "name": "Massage timer step"
+      }
+    },
+    "cover": {
+      "motor_head": {
+        "name": "Head"
+      },
+      "motor_foot": {
+        "name": "Foot"
+      },
+      "motor_tilt": {
+        "name": "Head tilt"
+      },
+      "motor_lumbar": {
+        "name": "Lumbar"
+      }
+    },
+    "sensor": {
+      "head_angle": {
+        "name": "Head angle"
+      },
+      "foot_angle": {
+        "name": "Foot angle"
+      },
+      "head_massage_strength": {
+        "name": "Head massage strength"
+      },
+      "foot_massage_strength": {
+        "name": "Foot massage strength"
+      },
+      "massage_pattern": {
+        "name": "Massage pattern",
+        "state": {
+          "none": "Off",
+          "pulse": "Pulse",
+          "constant": "Constant",
+          "ripple": "Ripple"
+        }
+      },
+      "massage_timer": {
+        "name": "Massage time remaining"
+      },
+      "temperature": {
+        "name": "Temperature"
+      },
+      "humidity": {
+        "name": "Humidity"
+      },
+      "co2": {
+        "name": "CO2"
+      },
+      "voc": {
+        "name": "VOC"
+      },
+      "wifi_signal": {
+        "name": "WiFi signal"
+      }
+    },
+    "switch": {
+      "safety_light": {
+        "name": "Safety light"
+      },
+      "snore_relief_tilt": {
+        "name": "Snore relief tilt"
+      },
+      "snore_relief_vibration": {
+        "name": "Snore relief vibration"
+      }
+    }
+  }
+}

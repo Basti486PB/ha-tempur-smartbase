@@ -1,0 +1,152 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sleeptracker-Konto",
+        "description": "Melde dich mit dem Konto an, das du in der Tempur-App Sleeptracker AI verwendest.",
+        "data": {
+          "email": "E-Mail",
+          "password": "Passwort",
+          "brand": "App / Marke"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Erneut anmelden",
+        "description": "Die Sleeptracker-Cloud hat das Passwort für {email} abgelehnt.",
+        "data": {
+          "password": "Passwort"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "E-Mail oder Passwort ist falsch.",
+      "cannot_connect": "Die Sleeptracker-Cloud ist nicht erreichbar.",
+      "unknown": "Unerwarteter Fehler, siehe Protokoll."
+    },
+    "abort": {
+      "already_configured": "Dieses Konto ist bereits eingerichtet.",
+      "reauth_successful": "Erneut angemeldet."
+    }
+  },
+  "selector": {
+    "brand": {
+      "options": {
+        "tempur": "Tempur (Sleeptracker AI)",
+        "beautyrest": "Beautyrest",
+        "serta": "Serta"
+      }
+    }
+  },
+  "entity": {
+    "button": {
+      "preset_flat": {
+        "name": "Position flach"
+      },
+      "preset_zero_g": {
+        "name": "Position Zero G"
+      },
+      "preset_tv": {
+        "name": "Position TV"
+      },
+      "preset_user_favorite": {
+        "name": "Position Favorit"
+      },
+      "preset_anti_snore": {
+        "name": "Position Anti-Schnarch"
+      },
+      "program_zero_g": {
+        "name": "Aktuelle Position als Zero G speichern"
+      },
+      "program_tv": {
+        "name": "Aktuelle Position als TV speichern"
+      },
+      "program_user_favorite": {
+        "name": "Aktuelle Position als Favorit speichern"
+      },
+      "program_anti_snore": {
+        "name": "Aktuelle Position als Anti-Schnarch speichern"
+      },
+      "massage_head_step": {
+        "name": "Kopfmassage Stufe"
+      },
+      "massage_foot_step": {
+        "name": "Fußmassage Stufe"
+      },
+      "massage_step": {
+        "name": "Massage Stufe"
+      },
+      "massage_pattern_step": {
+        "name": "Massagemuster wechseln"
+      },
+      "massage_timer_step": {
+        "name": "Massagetimer wechseln"
+      }
+    },
+    "cover": {
+      "motor_head": {
+        "name": "Kopfteil"
+      },
+      "motor_foot": {
+        "name": "Fußteil"
+      },
+      "motor_tilt": {
+        "name": "Kopfneigung"
+      },
+      "motor_lumbar": {
+        "name": "Lordosenstütze"
+      }
+    },
+    "sensor": {
+      "head_angle": {
+        "name": "Winkel Kopfteil"
+      },
+      "foot_angle": {
+        "name": "Winkel Fußteil"
+      },
+      "head_massage_strength": {
+        "name": "Stärke Kopfmassage"
+      },
+      "foot_massage_strength": {
+        "name": "Stärke Fußmassage"
+      },
+      "massage_pattern": {
+        "name": "Massagemuster",
+        "state": {
+          "none": "Aus",
+          "pulse": "Puls",
+          "constant": "Konstant",
+          "ripple": "Welle"
+        }
+      },
+      "massage_timer": {
+        "name": "Massage-Restzeit"
+      },
+      "temperature": {
+        "name": "Temperatur"
+      },
+      "humidity": {
+        "name": "Luftfeuchtigkeit"
+      },
+      "co2": {
+        "name": "CO2"
+      },
+      "voc": {
+        "name": "VOC"
+      },
+      "wifi_signal": {
+        "name": "WLAN-Signal"
+      }
+    },
+    "switch": {
+      "safety_light": {
+        "name": "Unterbettbeleuchtung"
+      },
+      "snore_relief_tilt": {
+        "name": "Schnarchhilfe Neigung"
+      },
+      "snore_relief_vibration": {
+        "name": "Schnarchhilfe Vibration"
+      }
+    }
+  }
+}
