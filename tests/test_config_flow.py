@@ -13,7 +13,11 @@ from custom_components.tempur_smartbase.api import (
 )
 from custom_components.tempur_smartbase.const import CONF_BRAND, DOMAIN
 
-USER_INPUT = {CONF_EMAIL: " A@B.de ", CONF_PASSWORD: "pw", CONF_BRAND: "tempur"}
+USER_INPUT = {
+    CONF_EMAIL: " USER@example.com ",
+    CONF_PASSWORD: "pw",
+    CONF_BRAND: "tempur",
+}
 
 
 async def test_user_flow(hass: HomeAssistant, mock_api) -> None:
@@ -25,9 +29,9 @@ async def test_user_flow(hass: HomeAssistant, mock_api) -> None:
         result["flow_id"], USER_INPUT
     )
     assert result["type"] is FlowResultType.CREATE_ENTRY
-    assert result["title"] == "a@b.de"
+    assert result["title"] == "user@example.com"
     assert result["data"] == {
-        CONF_EMAIL: "a@b.de",
+        CONF_EMAIL: "user@example.com",
         CONF_PASSWORD: "pw",
         CONF_BRAND: "tempur",
     }

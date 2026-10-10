@@ -14,8 +14,12 @@ from custom_components.tempur_smartbase.const import CONF_BRAND, DOMAIN, Command
 def _entry() -> MockConfigEntry:
     return MockConfigEntry(
         domain=DOMAIN,
-        unique_id="tempur_a@b.de",
-        data={CONF_EMAIL: "a@b.de", CONF_PASSWORD: "pw", CONF_BRAND: "tempur"},
+        unique_id="tempur_user@example.com",
+        data={
+            CONF_EMAIL: "user@example.com",
+            CONF_PASSWORD: "pw",
+            CONF_BRAND: "tempur",
+        },
     )
 
 

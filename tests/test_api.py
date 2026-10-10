@@ -34,12 +34,12 @@ async def test_login_and_command(hass: HomeAssistant, aioclient_mock) -> None:
             "body": {"snapshots": [{"side": 0}]},
         },
     )
-    api = SleeptrackerApi(async_get_clientsession(hass), "a@b.de", "pw")
+    api = SleeptrackerApi(async_get_clientsession(hass), "user@example.com", "pw")
 
     assert await api.send_command(Command.PRESET_FLAT) == [{"side": 0}]
 
     _, _, login_body, login_headers = aioclient_mock.mock_calls[0]
-    expected = base64.b64encode(b"a@b.de:pw").decode()
+    expected = base64.b64encode(b"user@example.com:pw").decode()
     assert login_headers["Authorization"] == f"Basic {expected}"
     assert login_body["clientID"] == "sleeptracker-android-tsi"
     _, _, body, headers = aioclient_mock.mock_calls[1]
@@ -53,7 +53,7 @@ async def test_login_and_command(hass: HomeAssistant, aioclient_mock) -> None:
 
 async def test_bad_credentials(hass: HomeAssistant, aioclient_mock) -> None:
     aioclient_mock.post(AUTH_URL, status=401)
-    api = SleeptrackerApi(async_get_clientsession(hass), "a@b.de", "wrong")
+    api = SleeptrackerApi(async_get_clientsession(hass), "user@example.com", "wrong")
     with pytest.raises(SleeptrackerAuthError):
         await api.authenticate()
 
@@ -66,7 +66,7 @@ async def test_command_error(hass: HomeAssistant, aioclient_mock) -> None:
         CONTROL_URL,
         json={"statusCode": 28, "statusMessage": "INVALID_PRESET", "body": {}},
     )
-    api = SleeptrackerApi(async_get_clientsession(hass), "a@b.de", "pw")
+    api = SleeptrackerApi(async_get_clientsession(hass), "user@example.com", "pw")
     # Harmless for a status request, an error for a real command.
     assert await api.send_command(Command.STATUS) == []
     with pytest.raises(SleeptrackerError):
