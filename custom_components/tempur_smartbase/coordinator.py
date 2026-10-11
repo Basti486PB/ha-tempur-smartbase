@@ -155,14 +155,20 @@ class TempurCoordinator(DataUpdateCoordinator[TempurData]):
 
     async def async_send_command(self, command: Command, **extra: Any) -> None:
         """Send a command to the base and refresh the state."""
+        await self.async_send_command_raw(command, **extra)
+        await self.async_request_refresh()
+
+    async def async_send_command_raw(
+        self, command: Command, **extra: Any
+    ) -> list[dict[str, Any]]:
+        """Send a command and return the status snapshots, without a refresh."""
         try:
-            await self.api.send_command(command, **extra)
+            return await self.api.send_command(command, **extra)
         except SleeptrackerAuthError as err:
             self.config_entry.async_start_reauth(self.hass)
             raise HomeAssistantError(str(err)) from err
         except SleeptrackerError as err:
             raise HomeAssistantError(f"Command failed: {err}") from err
-        await self.async_request_refresh()
 
     async def async_set_snore_relief(self, **changes: bool) -> None:
         """Change one or both snore relief settings."""
