@@ -25,12 +25,16 @@ Pro Bett wird ein Gerät angelegt. Es erscheinen nur die Entitäten, die dein Un
 | --- | --- |
 | Button | Positionen *flach*, *Zero G*, *TV*, *Favorit*, *Anti-Schnarch*; Massage-Stufen (Kopf, Fuß, beide), Massagemuster, Massagetimer |
 | Button (Konfiguration, standardmäßig deaktiviert) | Aktuelle Position als *Zero G*, *TV*, *Favorit* oder *Anti-Schnarch* speichern |
-| Cover | Motoren Kopfteil, Fußteil, Kopfneigung, Lordosenstütze (Öffnen = hoch, Schließen = runter, Stopp) |
+| Cover | Motoren Kopfteil, Fußteil, Kopfneigung, Lordosenstütze. Öffnen fährt hoch, Schließen runter, jeweils bis du Stopp drückst, der Motor am Anschlag ist oder nach spätestens 45 Sekunden |
 | Sensor | Winkel Kopf- und Fußteil, Massagestärke, Massagemuster, Massage-Restzeit, WLAN-Signal (Diagnose, standardmäßig deaktiviert) |
 | Sensor (falls vorhanden) | Raumtemperatur, Luftfeuchtigkeit, CO2, VOC des Sleeptracker-Moduls |
 | Switch | Unterbettbeleuchtung, Schnarchhilfe Neigung, Schnarchhilfe Vibration |
 
 Der Zustand wird einmal pro Minute aus der Cloud abgefragt und nach jedem Befehl sofort aktualisiert.
+
+### Bekanntes Problem: Massage ausschalten
+
+Bei manchen Untergestellen stürzt das Sleeptracker-Modul ab, wenn die Kopf- oder Fußmassage über die Stufen-Buttons wieder auf *aus* geschaltet wird (siehe [#3](https://github.com/Basti486PB/ha-tempur-smartbase/issues/3)). Das Bett ist danach weder über Home Assistant noch über die App erreichbar, bis du es kurz vom Strom trennst. Der Fehler tritt genauso bei smartbed-mqtt auf und liegt vermutlich im Modul bzw. in der Cloud. Bis er geklärt ist: Massage lieber über die Fernbedienung oder die App ausschalten.
 
 ### Zwei Betten oder zwei Seiten
 
@@ -117,7 +121,9 @@ Unofficial Home Assistant integration for Tempur adjustable bases (e.g. **TEMPUR
 
 **Setup:** *Settings → Devices & services → Add integration → Tempur Smartbase*, enter your Sleeptracker AI email and password, keep *Tempur (Sleeptracker AI)* selected.
 
-**Entities:** preset, program and massage buttons; covers for the head, foot, tilt and lumbar motors; sensors for head/foot angle, massage state, room climate (if the module has sensors) and WiFi signal; switches for the safety light and snore relief. Only features your base reports are created. State is polled every 60 seconds.
+**Entities:** preset, program and massage buttons; covers for the head, foot, tilt and lumbar motors (open/close keeps moving until you press stop, the motor reaches its end, or 45 seconds pass); sensors for head/foot angle, massage state, room climate (if the module has sensors) and WiFi signal; switches for the safety light and snore relief. Only features your base reports are created. State is polled every 60 seconds.
+
+**Known issue:** on some bases, stepping head or foot massage back to *off* with the step buttons crashes the Sleeptracker module until it is power-cycled ([#3](https://github.com/Basti486PB/ha-tempur-smartbase/issues/3)). The same happens with smartbed-mqtt. Until this is solved, turn massage off with the remote or the app.
 
 **Two beds or sides:** commands always go to the side that belongs to the signed-in account. Add the integration once per account.
 
